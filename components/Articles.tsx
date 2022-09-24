@@ -12,7 +12,7 @@ export const Articles = ({ posts }: ArticlesProps) => {
         return (
           <li key={idx}>
             <div>
-              <Link href={`/post/${post.slug}`}>{post.title}</Link>
+              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </div>
             <p>{post.excerpt}</p>
             <p>
