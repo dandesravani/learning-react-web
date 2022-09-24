@@ -9,7 +9,6 @@ export const Articles = ({ posts }: ArticlesProps) => {
   return (
     <ul>
       {posts.map((post, idx) => {
-        console.log(post);
         return (
           <li key={idx}>
             <div>

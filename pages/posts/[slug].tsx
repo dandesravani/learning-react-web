@@ -7,6 +7,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Youtube from "../../components/Youtube";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeHighlight from "rehype-highlight"
 
 interface MdxPost {
   source: MDXRemoteSerializeResult<
@@ -36,11 +37,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       rehypePlugins: [
         rehypeSlug,
         [rehypeAutolinkHeadings, { behavior: "wrap" }],
+        rehypeHighlight
       ],
     },
   });
 
-  console.log(mdxSource);
   return {
     props: { post: { source: mdxSource, meta } },
   };

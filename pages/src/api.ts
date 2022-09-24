@@ -25,7 +25,6 @@ export const getSlugs = (): string[] => {
   return paths.map(path=>{
     const slugs = path.split('/')
     const fileName = slugs[slugs.length - 1]
-    console.log(fileName)
     const [ slug, _ext ] = fileName.split(".")
     return slug
   })
